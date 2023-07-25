@@ -1,0 +1,23 @@
+.Detail-Order__name{
+    padding:10px 0;
+}
+.Detail-Order__phone{
+    padding:10px 0;
+}
+.Detail-Order__address{
+    padding:10px 0;
+}
+.Detail-Order__note{
+    padding:10px 0;
+}
+.Detail-Order__foods{
+    padding:10px 0;
+}
+.Detail-Order__item{
+    margin: 10px;
+}
+
+.Detail-Order__price{
+    font-size: 20px;
+    color: red;
+}

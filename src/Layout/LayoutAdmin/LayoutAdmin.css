@@ -1,0 +1,58 @@
+.Layout-Admin__header{
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    border: #b08989 solid 1px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 70px;
+    z-index: 100000;
+}
+.Layout-Admin__wrap{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.Layout-Admin__main{
+    height: calc(100vh - 70px);
+    top: 70px;
+    position: fixed;
+    width: 100%;
+}
+
+
+.Layout-Admin__logo{
+    width: 230px;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #edf2f9;
+    transition: all 0.2s;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.Layout-Admin__logo--fold{
+    width: 80px;
+}
+
+.Layout-Admin__nav{
+    padding: 0 20px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Layout-Admin__icon-collapse{
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.Layout-Admin__content{
+    background: #F9FBFD;
+    padding: 25px;
+    width: 100%;
+}

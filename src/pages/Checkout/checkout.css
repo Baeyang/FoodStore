@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+
+.Checkout__table td{
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.cart__item-quantity{
+    color: red;
+}
+
+.cart__item-totalprice{
+    color: green;
+    font-weight: 600;
+}
+
+.cart__items-totalprice{
+    color: red;
+    font-size: 25px;
+    font-weight: 700;
+}
