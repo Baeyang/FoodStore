@@ -1,6 +1,6 @@
 import { Button,Tooltip,Modal,Row,Col,Form,Input,Switch } from "antd"
 import { EditOutlined } from "@ant-design/icons"
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import {ref,db,update} from '../../firebase'
 
 function EditProduct(props){

@@ -33,7 +33,6 @@ function DetailProduct(){
         }
         fetchApi();
     },[])
-    console.log(detailProduct)
 
     return(<>
      <Container sx={{paddingLeft:3, paddingRight:3, paddingTop:2}} >

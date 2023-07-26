@@ -18,9 +18,15 @@ function ProductList(){
         }
         fetchApi();
     },[])
+    //Lấy ra các sản phẩm được bật (có bán)
+    const onProduct = product.filter((item)=>{
+        return item.status === true
+    })
+
+
     //Lọc theo tên input vào
     const name = useSelector(state => state.nameReducer)
-    const filterName = product.filter((item)=>{
+    const filterName = onProduct.filter((item)=>{
         return item.title.toLowerCase().includes(name)
     })
 

@@ -2,6 +2,8 @@ import { useState,useEffect } from "react"
 import {ref,db,get} from '../../firebase'
 import {Table,Tag } from "antd";
 import EditProduct from "./EditProduct";
+import DeleteProduct from "./DeleteProduct";
+import AddProduct from "./AddProduct";
 function ProductList(){
     const [product, setProduct] = useState([])
     const fetchApi = async() => {
@@ -55,6 +57,7 @@ function ProductList(){
             render: (_, record) => (
               <>
                   <EditProduct record={record} onReload={handleReload}></EditProduct>
+                  <DeleteProduct record={record} onReload={handleReload}></DeleteProduct>
               </>
             ),
         }
@@ -64,6 +67,10 @@ function ProductList(){
 
     return(
         <>
+        <div className="mb-20">
+          <AddProduct onReload={handleReload}/>
+        </div>
+        
         <Table dataSource={product} columns={columns} rowKey='id' > </Table>
         </>
     )
