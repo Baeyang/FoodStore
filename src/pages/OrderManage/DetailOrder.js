@@ -52,6 +52,9 @@ function DetailOrder(){
                         )
                     })}
                 </div>
+                <div className="Detail-Order__status">
+                    
+                </div>
                 <div>
                     <strong className="Detail-Order__price">
                         Tổng giá : {detailOrder.totalPrice}    

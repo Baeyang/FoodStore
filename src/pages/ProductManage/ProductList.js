@@ -1,9 +1,11 @@
 import { useState,useEffect } from "react"
 import {ref,db,get} from '../../firebase'
-import {Table,Tag } from "antd";
+import {Table,Tag,Tooltip } from "antd";
 import EditProduct from "./EditProduct";
 import DeleteProduct from "./DeleteProduct";
 import AddProduct from "./AddProduct";
+import DetailProduct from "./DetailProduct";
+
 function ProductList(){
     const [product, setProduct] = useState([])
     const fetchApi = async() => {
@@ -13,6 +15,21 @@ function ProductList(){
                 setProduct(data.reverse())
             })
     }
+      // lấy ra các category option
+    const categories = [...new Set(product.map((item)=>{
+      return item.category
+    }))]
+    console.log(categories)
+      // tạo mảng key value là tên category để filter bằng api table antd
+    let options = []
+    if(categories){
+      options = categories.map((item)=>{
+        return {text: item , value: item}
+      })
+    }
+    console.log(options)
+
+
     useEffect(()=>{
         fetchApi();
     },[])
@@ -31,6 +48,9 @@ function ProductList(){
           title: 'Loại sản phẩm',
           dataIndex: 'category',
           key: 'category',
+          filters : options,
+          onFilter: (value, record) => record.category.indexOf(value) === 0,
+          sortDirections: ['descend'],
         },
         {
             title: 'Giá',
@@ -38,7 +58,7 @@ function ProductList(){
             key: 'price',
           },
         {
-            title: 'Trạng thái',
+            title: 'Trạng thái bán',
             dataIndex: 'status',
             key: 'status',
             render: (_, record) => (
@@ -58,10 +78,14 @@ function ProductList(){
               <>
                   <EditProduct record={record} onReload={handleReload}></EditProduct>
                   <DeleteProduct record={record} onReload={handleReload}></DeleteProduct>
+                  <DetailProduct record={record} onReload={handleReload}></DetailProduct>
               </>
             ),
         }
       ];
+      const onChange = (pagination, filters, sorter, extra) => {
+        console.log('params', pagination, filters, sorter, extra);
+      };
    
 
 
@@ -71,7 +95,7 @@ function ProductList(){
           <AddProduct onReload={handleReload}/>
         </div>
         
-        <Table dataSource={product} columns={columns} rowKey='id' > </Table>
+        <Table dataSource={product} columns={columns} rowKey='id'  onChange={onChange}> </Table>
         </>
     )
 }

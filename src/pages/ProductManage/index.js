@@ -1,5 +1,6 @@
 import AddProduct from "./AddProduct"
 import ProductList from "./ProductList"
+import './ProductManage.css'
 
 function ProductManage(){
     return(

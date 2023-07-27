@@ -1,0 +1,9 @@
+.Manage-Product__image img{
+    width: 70%;
+    aspect-ratio: 4/3;
+}
+
+.Manage-Product__title{
+    font-size: 20px;
+    font-weight: 500;
+}
