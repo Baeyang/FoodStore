@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react"
 import {ref,db,get} from '../../firebase'
-import { Table,Button,Tooltip } from "antd"
+import { Table,Button,Tooltip, Tag } from "antd"
 import { Link } from "react-router-dom";
 import { EyeOutlined } from "@ant-design/icons";
 function OrderList(){
@@ -18,6 +18,11 @@ function OrderList(){
     console.log(order)
 
     const columns = [
+        {
+          title :'Mã Đơn',
+          dataIndex : 'id',
+          key : 'id'
+        },
         {
           title: 'Tên',
           dataIndex: 'name',
@@ -38,6 +43,22 @@ function OrderList(){
             dataIndex: 'creatAt',
             key: "creatAt",
         },
+        {
+          title: 'Trạng thái bán',
+          dataIndex: 'status',
+          key: 'status',
+          render: (_, record) => (
+              <>
+                {record.status === 'Đang chờ' ? (
+                  <Tag color="yellow">Đang chờ</Tag>
+                ) : record.status === 'Đang giao hàng' ? (
+                  <Tag color="blue">Đang giao hàng</Tag>
+                ) : (<Tag color="green">{record.status}</Tag>)
+                }
+              </>
+            ),
+        },
+        
         {
             title: "Hành động",
             key: "actions",

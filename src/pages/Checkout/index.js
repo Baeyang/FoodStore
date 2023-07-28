@@ -27,10 +27,6 @@ function Checkout() {
     }, 0)
 
     const handleFinish = async (values) => {
-        values.ordered = cart
-        values.totalPrice = total
-        values.creatAt = getTimeCurrent()
-        console.log(values)
         const orderRef = ref(db, 'order');
         const newOrderRef = push(orderRef);
         const newOrderID = newOrderRef.key
@@ -38,13 +34,16 @@ function Checkout() {
         values.totalPrice = total
         values.creatAt = getTimeCurrent()
         values.id = newOrderID
+        values.status = 'Đang chờ'
         await set(newOrderRef, values)
             .then(() => {
                 form.resetFields();
                 noti.success({
                     message: `Gửi yêu cầu thành công!`,
                     description: "Cảm ơn bạn đã đặt hàng!",
-
+                    style: {
+                        marginTop: '10vh',
+                      }
                 });
                 deleteCookie('cart');
                 dispatch(deleteCart());
@@ -54,6 +53,9 @@ function Checkout() {
                 noti.error({
                     message: `Gửi yêu cầu không thành công!`,
                     description: "Hệ thống đang gặp lỗi, vui lòng gửi lại yêu cầu.",
+                    style: {
+                        marginTop: '10vh',
+                      }
                 });
             });
     }

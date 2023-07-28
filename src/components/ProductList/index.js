@@ -18,6 +18,7 @@ function ProductList(){
         }
         fetchApi();
     },[])
+    console.log(product)
     //Lấy ra các sản phẩm được bật (có bán)
     const onProduct = product.filter((item)=>{
         return item.status === true
