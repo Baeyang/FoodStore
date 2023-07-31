@@ -1,12 +1,17 @@
 import { signInWithEmailAndPassword } from "firebase/auth"
-import { db, set, get } from "../../firebase"
+import { db, get } from "../../firebase"
 import { ref,update} from "../../firebase"
 import { auth } from "../../firebase"
 import { useNavigate } from "react-router-dom"
 import { setCookie } from "../../helper/Cookie"
 import { useDispatch } from "react-redux"
 import { checkLogin } from "../../actions/login"
+import './login.css'
+import {notification } from "antd"
+
+
 function Login(){
+    const [noti, contextHolder] = notification.useNotification();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const handleSubmit = (e) =>{
@@ -34,23 +39,33 @@ function Login(){
                     navigate("/admin");  
             })
             .catch((error)=>{
-                const errorCode = error.code;
-                const errorMessage = error.message
-                alert(errorMessage)
+                // const errorCode = error.code;
+                // const errorMessage = error.message
+                let errorCustom = 'Tài khoản hoặc mật khẩu không đúng'
+                noti.error({
+                    description: errorCustom,
+                    style: {
+                        marginTop: '10vh',
+                      }
+                });
             })
     }
     
-    
     return(
         <>
-            <h1>
-                Đăng nhập 
-            </h1>
-            <form onSubmit={handleSubmit}>
-                <div><input type='email' name='' placeholder="Nhập email"></input></div>
-                <div><input type='password' name='' placeholder="Nhập mật khẩu"></input></div>
-                <div><button type = 'submit'>Đăng nhập </button></div>
-            </form>
+            {contextHolder}
+            <div className="Login">
+                <form onSubmit={handleSubmit} className="Login__form">
+                    <div className="Login__form-inner">
+                        <h1 className="Login__form-title">
+                            Đăng nhập 
+                        </h1>
+                        <div className="Login__form-input"><input type='username' name='' placeholder="Tên đăng nhập" required></input></div>
+                        <div className="Login__form-input" ><input type='password' name='' placeholder="Mật khẩu" required></input></div>
+                        <div className="Login__form-button"><button type = 'submit'>Đăng nhập </button></div>
+                    </div>
+                </form>
+            </div>
         </>
 
     )

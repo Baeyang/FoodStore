@@ -18,6 +18,7 @@ import './App.css';
 import OrderManage from "./pages/OrderManage"
 import DetailOrder from "./pages/OrderManage/DetailOrder"
 import ProductManage from "./pages/ProductManage"
+import ListRelatedProduct from "./pages/DetailProduct/ListRelatedProduct"
 function App() {
 
   return (

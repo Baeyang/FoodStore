@@ -39,6 +39,7 @@ function AddProduct(props){
                 thumbnail: imageURL ?  imageURL : '',
                 description : values.description,
                 status : true,
+                rating : ''
             })
                 .then(()=>{
                     form.resetFields();

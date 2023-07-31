@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
 import {ref,db,get,update} from '../../firebase'
 import { useState,useEffect } from "react"
-import { Card,Col,Row,Select,Form,Button,message } from "antd"
+import { Card,Col,Row,Select,Form,Button,message,Spin } from "antd"
 import GoBack from "../../components/Goback"
 import './OrderManage.css'
 
@@ -130,7 +130,12 @@ function DetailOrder(){
                 </div>
             </Card>
             </Col>
-        </Row>) : (<div> Đang tải trang </div>)
+        </Row>) : (
+            <>
+            <Row>
+                <Spin className="loading"  size="large"/>
+            </Row>
+            </>)
         }
         </>
     )

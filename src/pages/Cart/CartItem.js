@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux"
 import { deleteItem, updateCart } from "../../actions/cart"
 import { useRef } from "react"
 import { Button } from "antd";
-
+import {MinusOutlined, PlusOutlined} from '@ant-design/icons'
 function CartItem(props){
     const {item} = props
     const dispatch = useDispatch()
@@ -37,9 +37,9 @@ function CartItem(props){
                     
                     <div className="cart__quantity">
                         <div className="cart__value">
-                            <button onClick={handleDown}>-</button>
+                            <MinusOutlined onClick={handleDown}/>
                             <input ref={inputRef} defaultValue={item.quantity}></input>
-                            <button onClick={handleUp}>+</button>
+                            <PlusOutlined onClick={handleUp}/>
                         </div>
                         {/* <div className="cart__check">
                         <Checkbox onClick={handleTick}>Chọn thanh toán</Checkbox>   

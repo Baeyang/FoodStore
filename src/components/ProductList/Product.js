@@ -19,7 +19,6 @@ function Product(props){
     return(
         <>      
                 <div className="Product__item" key={item.index}>
-                    
                     <Link to = {`product/${item.id}`}> 
                     <div className="Product__image">
                         <img src={item.thumbnail} alt='img'></img>

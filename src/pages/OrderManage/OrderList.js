@@ -1,16 +1,18 @@
 import { useState,useEffect } from "react"
 import {ref,db,get} from '../../firebase'
-import { Table,Button,Tooltip, Tag } from "antd"
+import { Table,Button,Tooltip, Tag,Spin } from "antd"
 import { Link } from "react-router-dom";
 import { EyeOutlined } from "@ant-design/icons";
 function OrderList(){
     const [order, setOrder] = useState([])
+    const [isLoading,setLoading] = useState(false)
     useEffect(()=>{
         const fetchApi = async() => {
             get(ref(db,'order'))
                 .then(snapshot=>{
                     var data = Object.values(snapshot.val())
                     setOrder(data.reverse())
+                    setLoading(true)
                 })
         }
         fetchApi();
@@ -80,7 +82,13 @@ function OrderList(){
     
     return(
         <>
-            <Table dataSource={order} columns={columns} rowKey='id' />
+        {isLoading ? (
+          <Table dataSource={order} columns={columns} rowKey='id' />
+          ):(
+          <div>
+            <Spin className="loading"  size="large"/>
+          </div>)
+        }
         </>
     )
 }

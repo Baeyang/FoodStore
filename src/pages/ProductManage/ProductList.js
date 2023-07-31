@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react"
 import {ref,db,get} from '../../firebase'
-import {Table,Tag,Tooltip } from "antd";
+import {Table,Tag,Spin } from "antd";
 import EditProduct from "./EditProduct";
 import DeleteProduct from "./DeleteProduct";
 import AddProduct from "./AddProduct";
@@ -8,11 +8,13 @@ import DetailProduct from "./DetailProduct";
 
 function ProductList(){
     const [product, setProduct] = useState([])
+    const [isLoading,setLoading] = useState(false)
     const fetchApi = async() => {
         get(ref(db,'products'))
             .then(snapshot=>{
                 var data = Object.values(snapshot.val())
                 setProduct(data.reverse())
+                setLoading(true)
             })
     }
       // lấy ra các category option
@@ -91,11 +93,19 @@ function ProductList(){
 
     return(
         <>
-        <div className="mb-20">
-          <AddProduct onReload={handleReload}/>
-        </div>
-        
-        <Table dataSource={product} columns={columns} rowKey='id'  onChange={onChange}> </Table>
+        {isLoading ? 
+        (
+          <>
+            <div className="mb-20">
+              <AddProduct onReload={handleReload}/>
+            </div>
+            <Table dataSource={product} columns={columns} rowKey='id'  onChange={onChange}> </Table>
+          </>) : (
+          <>
+            <div>
+                <Spin className="loading"  size="large"/>
+            </div>
+          </>)}
         </>
     )
 }

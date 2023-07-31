@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
 import {ShoppingCartOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
-import { Button } from 'antd';
+import { Badge } from 'antd';
 import { getCookie } from '../../helper/Cookie';
+import './CartQuantity.css'
 function CartQuantity () {
     const cartRedux = useSelector(state=>state.cartReducer)
     const data = getCookie('cart')
@@ -14,7 +15,10 @@ function CartQuantity () {
 
         return(
         <>
-        <Link to = 'cart'> <Button icon={<ShoppingCartOutlined />}> Giỏ hàng ({total}) </Button> </Link>
+        <Link to = 'cart'>
+        <Badge count={total} size='small'>
+            <ShoppingCartOutlined  className='cart__icon'/> 
+        </Badge></Link>
         </>
     )
 }

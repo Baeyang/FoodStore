@@ -28,8 +28,8 @@ function Cart(){
         <div className="cart">
             <div className="cart__top">
             <h1> GIỎ HÀNG </h1>
-            <div> <button onClick={handleDelAll}> Xóa tất cả</button> </div>
-            
+            <div> 
+                <Button danger onClick={handleDelAll}> Xóa tất cả</Button> </div>
             </div>
             
 
@@ -43,9 +43,9 @@ function Cart(){
                     Tổng tiền : {total} $
                 </div>
                 <div className="cart__pay-box">
-                    <Button className="cart__pay-button">
+                    <button className="cart__pay-button">
                         <Link to = '/checkout'>THANH TOÁN NGAY</Link>
-                    </Button>
+                    </button>
                 </div>
                 </>
             ):(

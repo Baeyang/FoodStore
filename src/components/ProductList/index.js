@@ -4,16 +4,18 @@ import { useEffect, useState } from "react"
 import { db ,get, ref} from "../../firebase"
 import { Pagination } from "@mui/material"
 import { useSelector } from "react-redux"
-import { Row, Col } from 'antd';
+import { Row, Col,Spin } from 'antd';
 function ProductList(){
     const [product,setProduct] = useState([])
     const [page,setPage]  = useState(1)
+    const [isLoading,setLoading] = useState(false)
     useEffect(()=>{
         const fetchApi = async() => {
             get(ref(db,'products'))
                 .then(snapshot=>{
                     var data = Object.values(snapshot.val())
                     setProduct(data)
+                    setLoading(true)
                 })
         }
         fetchApi();
@@ -23,7 +25,6 @@ function ProductList(){
     const onProduct = product.filter((item)=>{
         return item.status === true
     })
-
 
     //Lọc theo tên input vào
     const name = useSelector(state => state.nameReducer)
@@ -62,42 +63,43 @@ function ProductList(){
         setPage(1); 
       }, [categoryOption]);
     return(
-        <div>
-        {filterProduct.length > 0 ?
+        <>
+        {isLoading ?
         (
             <>
-        <div className="Product__list">
-
-            <Row gutter={[16, 16]}>
-            {filterProduct.slice(page*8-8 , page*8).map((item, index) => (
-                <Col xs={24} sm={12} md={8} lg={6} xl={6} key={index}>
-                    <Product  key={index} item={item} /> 
-                </Col>
-            ))}
-            </Row> 
-        </div>
-        <div className="Product__pagination">
-            <Pagination page={page} count={pageCount} onChange={handleChange}/>
-        </div>
+        {filterProduct.length > 0 ? (
+            <>
+            <div className="Product__list">
+                <Row gutter={[16, 16]}>
+                {filterProduct.slice(page*8-8 , page*8).map((item, index) => (
+                    <Col xs={24} sm={12} md={8} lg={6} xl={6} key={index}>
+                        <Product  key={index} item={item} /> 
+                    </Col>
+                ))}
+                </Row> 
+            </div>
+            <div className="Product__pagination">
+                <Pagination page={page} count={pageCount} onChange={handleChange}/>
+            </div>
+            </>
+            ):(
+            <>
+                <div className="ml-20 mt-20">Không tìm thấy sản phẩm.</div>
+            </>
+        )}
             </>
         )
         :(
             <>
             <Row>
-            <div className="Product__list">
-                <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                <p> Không tìm thấy sản phẩm nào.</p>
-                </Col>
-            </div>
+                <Spin className="loading"  size="large"/>
             </Row>
-           
-           
             </>
         )
         
         }
             
-        </div>
+        </>
     )
 }
 

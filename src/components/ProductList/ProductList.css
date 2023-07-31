@@ -12,8 +12,7 @@
 .Product__item {
     margin: 10px;
     box-shadow: 0 2px 48px rgba(0,0,0,0.10);
-    
-    /* min-width: 20%; */
+    background: white;
 }
 
 .Product__item:hover{
@@ -23,9 +22,11 @@
 
 
 .Product__title{
-    color: green;
-    font-size: 16px;
+    color: #252525;
+    font-weight: 600;
+    font-size: 14px;
     margin-left: 10px;
+    margin-bottom: 5px;
 }
 
 .Product__price{

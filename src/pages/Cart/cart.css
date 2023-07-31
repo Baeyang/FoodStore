@@ -13,10 +13,12 @@
     border: #ddd solid 1px;
     margin: 10px 0;
     align-items: center;
+    background: white;
 }
+
 .cart__total{
     color: red;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 500;
 }
 .cart__content{
@@ -36,6 +38,7 @@
 .cart__quantity{
     display: flex;
     align-items: center;
+    margin: 0 10px;
 }
 
 .cart__quantity input{
@@ -45,12 +48,27 @@
 
 .cart__value {
     margin-right: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .cart__pay-box{
     margin-top: 20px;
 }
 .cart__pay-button{
-    font-size: 25px;
-    height: 100%;
+    font-size: 20px;
+    background:rgb(215, 236, 250);
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px;
+}
+
+.cart__pay-button:hover{
+    transform: scale(1.1);
+}
+
+.cart__pay-button a{
+    color: black;
 }

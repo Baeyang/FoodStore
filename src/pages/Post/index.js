@@ -1,6 +1,4 @@
 
-// import { useEffect, useState } from "react"
-// // // import { db ,get, ref,push,set,uploadBytes, getDownloadURL} from "../../firebase"
 // // import {db,ref,push,set} from '../../firebase'
 // import { Form,Upload,Button,message} from 'antd';
 // // import {v4} from "uuid"
@@ -10,22 +8,18 @@
 // // 'file' comes from the Blob or File API
 // import { Select, Space } from 'antd';
 // //lưu vào storage và lấy ra url 
+import { Rate } from 'antd';
+import { useState } from 'react';
 function Post() {
+  
+  const [rating, setRating] = useState()
+  const onChange = (e) => {
+    console.log(e)
+  }
   return(
-    <></>
-    // <Form  layout="vertical" > 
-    // <Form.Item initialValue={value}>
-    //   <Select
-    //     style={{ width: 120 }}
-    //     options={[
-    //       { value: 'jack', label: 'Jack' },
-    //       { value: 'lucy', label: 'Lucy' },
-    //       { value: 'Yiminghe', label: 'yiminghe' },
-    //       { value: 'disabled', label: 'Disabled', disabled: true },
-    //     ]}
-    //   />
-    //   </Form.Item>
-    // </Form>
+    <>
+      <Rate onChange={onChange} />;
+    </>
   );
   }
   export default Post;
