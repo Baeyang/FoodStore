@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { setOptions } from "../../actions/filter";
 import { setPrice } from "../../actions/price";
 import { SearchName } from "../../actions/search";
+import {SearchOutlined} from '@ant-design/icons'
 function SearchForm(){
     const {Search} = Input
     //Lấy ra nhãn các category
@@ -52,14 +53,14 @@ function SearchForm(){
         <div className="SearchForm">
         <Row gutter = {[12,12]}>
             <Col xl={24} lg={24} md={24} sm={24} xs={24}>
-                    <Search placeholder="Nhập tên " onChange={handleSearch}></Search>
+                    <Input className="Input" placeholder="Nhập tên" prefix={<SearchOutlined></SearchOutlined>} onChange={handleSearch}></Input>
             </Col>
             <Col xl={24} lg={24} md={24} sm={12} xs={24}>
                 <Form onFinish={handleFinish}>
-                        <Form.Item name = "category">
-                        <Select options={options} placeholder='Chọn loại sản phẩm' className="Search-Form__Select"></Select>
+                        <Form.Item name = "category" >
+                        <Select  options={options} placeholder='Chọn loại sản phẩm' className="Search-Form__Select"></Select>
                         </Form.Item>
-                        <Form.Item>
+                        <Form.Item className="button">
                             <Button type='primary' htmlType="submit">
                                 Lọc
                             </Button>
@@ -69,7 +70,7 @@ function SearchForm(){
         
             <Col xl={24} lg={24} md={24} sm={8} xs={24}>   
                 <Radio.Group onChange={handleChange} defaultValue='Default'>
-                <Space direction="vertical">
+                <Space direction="vertical" >
                     <Radio value='Default' defaultChecked>Mặc định</Radio>
                     <Radio value='Low-High'>Thấp đến cao</Radio>
                     <Radio value='High-Low'>Cao xuống thấp</Radio>

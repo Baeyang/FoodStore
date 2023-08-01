@@ -70,9 +70,9 @@ function ProductList(){
         {filterProduct.length > 0 ? (
             <>
             <div className="Product__list">
-                <Row gutter={[16, 16]}>
+                <Row>
                 {filterProduct.slice(page*8-8 , page*8).map((item, index) => (
-                    <Col xs={24} sm={12} md={8} lg={6} xl={6} key={index}>
+                    <Col xs={12} sm={12} md={8} lg={6} xl={6} key={index}>
                         <Product  key={index} item={item} /> 
                     </Col>
                 ))}

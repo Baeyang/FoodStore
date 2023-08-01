@@ -3,7 +3,11 @@
     display: flex;
     flex-direction: column;
 }
-
+.home-icon{
+    font-size: 22px;
+    text-decoration: none;
+    color: #3CB815;
+}
 .Layout-default__header{
     background-color: #fff;
     padding: 0;
@@ -17,9 +21,7 @@
 a{
     text-decoration: none;
 }
-.container{
-    padding: 0 40px;
-}
+
 .Layout-default__wrap{
     padding: 10px 0;
     display: flex;

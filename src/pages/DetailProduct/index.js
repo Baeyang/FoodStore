@@ -5,7 +5,7 @@ import { useEffect } from "react"
 import './DetailProduct.css'
 import { useDispatch, useSelector } from "react-redux"
 import { addtoCart, updateCart } from "../../actions/cart";
-import { Button,Row,Col,Rate,Spin } from "antd";
+import { Row,Col,Rate,Spin,Collapse } from "antd";
 import RelatedProduct from "./RelatedProduct"
 
 
@@ -74,41 +74,48 @@ function DetailProduct(){
     {isLoading ? (
      <><div className="mt-20 Detail-Product" >
         <Row>
-            <Col xl ={9} lg={10} md={12} sm={24} xs={24}>
+            <Col xl ={10} lg={10} md={10} sm={24} xs={24}>
                 <div className="DetailProduct__image"> 
                     <img src={detailProduct.thumbnail} alt='img'></img>
                 </div>
             </Col>
 
-            <Col xl={{span:10,offset:1}} lg={{span:8,offset:1}}  md={{span:10,offset:1}} sm={24} xs={24}>
+            <Col xl={{span:12,offset:2}} lg={{span:12,offset:2}}  md={{span:13,offset:1}} sm={24} xs={24}>
                 <div className="DetailProduct__info">
                     <div className="DetailProduct__title">{detailProduct.title}</div>
                     <div className="DetailProduct__rate">
                         <Rate onChange={onChange} allowClear={false} defaultValue={avgRating}/>
                         <span className="ml-10">({listRating.length} đánh giá)</span>
-                        <div> - Danh sách các đánh giá : 
+                        {/* <div> - Danh sách các đánh giá : 
                         {Object.entries(sortedListRatingbyPoint).map(([key,value])=>{
                             return <div key={key}> + Lượt đánh giá {key} sao : {value}</div>
                         })}
-                        </div>
+                        </div> */}
+                            <Collapse size='small' ghost
+                            items={[{   key: '1', 
+                                        label: 'Các lượt đánh giá', 
+                                        children: <p>{
+                                            Object.entries(sortedListRatingbyPoint).map(([key,value])=>{
+                                                return <div key={key}> + Lượt đánh giá {key} sao : {value}</div>
+                                        })}</p> 
+                            }]}
+                        />
                     </div>
                     <div className="DetailProduct__price">Giá: {detailProduct.price}</div>
                     <div className="DetailProduct__des">Mô tả: {detailProduct.description}</div>
                     <hr></hr>
-                    <div className="Productadd">
-                        <Button onClick={handleAddToCart}> Chọn Mua </Button>
+                    <div className="button">
+                        <button onClick={handleAddToCart}> Chọn Mua </button>
                     </div>
                 </div>
             </Col>
         </Row>
         </div>
-        <div className="Related-Product">
         <Row>
             <Col span={24}>
                 <RelatedProduct category={category} id={id}></RelatedProduct>
             </Col>
         </Row>
-        </div>
     </>
      ) 
      : (<Spin className="loading"  size="large"/>)

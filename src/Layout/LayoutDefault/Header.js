@@ -14,23 +14,9 @@ function Header(){
                         <div className="Layout-default__wrap">
                             <div className="Layout-default__logo">
                                 <Link to = '/'> 
-                                <Button icon = {<HomeFilled/>} className='button-home'></Button>
+                                <HomeFilled className='home-icon'/>
                                 </Link>
                             </div>
-                            {/* <div className="Layout-default__item">
-                                <ul>
-                                    <li> 
-                                        <Link to = 'post'>
-                                        Diễn đàn
-                                        </Link>
-                                    </li>
-                                    <li> 
-                                        <Link to = 'about'>
-                                        Giới thiệu
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div> */}
                             
                             <div className="Layout-default__account">
                                 <CartQuantity/>

@@ -1,7 +1,6 @@
 
 import { useDispatch, useSelector } from "react-redux"
 import { addtoCart, updateCart } from "../../actions/cart";
-import { Button } from "antd";
 import { Link } from "react-router-dom";
 function Product(props){
     const {item} = props
@@ -24,14 +23,14 @@ function Product(props){
                         <img src={item.thumbnail} alt='img'></img>
                     </div>
                     <div className="Product__title">
-                         {item.title}
+                        {item.title}
                     </div>
                     </Link>
                     <div className="Product__price">
                         Giá : {item.price}
                     </div>
-                    <div className="Product__add">
-                        <Button onClick={handleAddToCart}> Chọn Mua </Button>
+                    <div className="button ml-5 mr-5 mt-10">
+                        <button onClick={handleAddToCart}> Chọn Mua </button>
                     </div>
                 </div>
         </>

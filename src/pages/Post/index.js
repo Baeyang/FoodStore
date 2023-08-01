@@ -7,18 +7,18 @@
 // import React from 'react';
 // // 'file' comes from the Blob or File API
 // import { Select, Space } from 'antd';
-// //lưu vào storage và lấy ra url 
-import { Rate } from 'antd';
-import { useState } from 'react';
+// // //lưu vào storage và lấy ra url 
+// import { Rate } from 'antd';
+// import { useState } from 'react';
 function Post() {
   
-  const [rating, setRating] = useState()
-  const onChange = (e) => {
-    console.log(e)
-  }
+  // const [rating, setRating] = useState()
+  // const onChange = (e) => {
+  //   console.log(e)
+  // }
   return(
     <>
-      <Rate onChange={onChange} />;
+      {/* <Rate onChange={onChange} />; */}
     </>
   );
   }

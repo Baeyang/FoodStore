@@ -2,14 +2,12 @@
     width: 100%;
     overflow: hidden;
     aspect-ratio: 4/3;
-    border-radius: 20px;
 }
 .Detail-Product{
     background: white;
 }
 .DetailProduct__title{
     font-size: 25px;
-    font-weight: 600;
     padding: 0;
 }
 
@@ -36,6 +34,74 @@
     top: 50%;
     left: 50%;    
 }
+.DetailProduct__info .button button{
+    height: 40px;
+}
+
+.RelatedProduct__image img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+.mySwiper{
+position: relative;
+  }
+.button-prev-product{
+    transition: all 0.3s ease 0s; 
+    background: #3CB815;
+    border-radius: 10px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 5;
+    font-size: 30px;
+    top: 38%;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color:white;
+    visibility:hidden;
+    opacity: 0;
+    cursor: pointer;
+  }
+.button-next-product {
+    transition: all 0.3s ease 0s; 
+    background: #3CB815;
+    border-radius: 50%;
+    position: absolute;
+    font-size: 30px;
+    z-index: 10;
+    top: 38%;   
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color:white;
+    visibility:hidden;
+    opacity: 0;
+    cursor: pointer;
+}
+  
+.RelatedProduct__list:hover .button-prev-product{
+    display: block;
+    visibility:visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+  
+.RelatedProduct__list:hover .button-next-product{
+    display: block;
+    visibility:visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
 
 @media (max-width: 768px){
     .Detail__Product{
@@ -63,6 +129,22 @@
     .DetailProduct__rate{
         margin-bottom: 10px;
         font-size: 14px;
+    }
+}
+@media (max-width: 576px){
+    .button-next-product {
+        width:30px;
+        height: 30px;
+        font-size: 20px;
+        line-height: 30px;
+        right: 0;
+    }
+    .button-prev-product {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        line-height: 30px;
+        left: 0;
     }
     
 }

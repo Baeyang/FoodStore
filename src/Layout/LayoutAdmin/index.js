@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import MenuSider from "./MenuSider";
-import { LogoutOutlined,UserOutlined,MenuUnfoldOutlined,MenuFoldOutlined } from '@ant-design/icons';
+import { LogoutOutlined,MenuUnfoldOutlined,MenuFoldOutlined } from '@ant-design/icons';
 const { Sider, Content } = Layout;
 function LayoutAdmin() {
     const token = getCookie('token')

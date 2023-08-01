@@ -3,9 +3,9 @@ function ListRelatedProduct(props){
     console.log(item.id)
     return(
         <>
-        <div key={item.index}>
+        <div  className = 'RelatedProduct' key={item.index}>
             <a href = {`/product/${item.id}`} > 
-                <div className="Product__image">
+                <div className="RelatedProduct__image">
                     <img src={item.thumbnail} alt='img'></img>
                 </div>
                 <div className="Product__title">

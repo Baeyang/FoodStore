@@ -28,8 +28,8 @@ function Cart(){
         <div className="cart">
             <div className="cart__top">
             <h1> GIỎ HÀNG </h1>
-            <div> 
-                <Button danger onClick={handleDelAll}> Xóa tất cả</Button> </div>
+            <div className="cart_clear"> 
+                <Button type = "primary" danger onClick={handleDelAll}> Xóa tất cả</Button> </div>
             </div>
             
 

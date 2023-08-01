@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -52,9 +53,11 @@
 }
 
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .container {
-    max-width: 540px;
+    max-width: 570px;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 }
 
@@ -90,6 +93,9 @@
 .mb-10 {
   margin-bottom: 10px;
 }
+.mt-10 {
+  margin-top: 10px;
+}
 
 .mt-20 {
   margin-top: 20px;
@@ -98,7 +104,40 @@
 .mb-20 {
   margin-bottom: 20px;
 }
+.mr-5{
+  margin-right: 5px;
+}
+.mr-10{
+  margin-right: 10px;
+}
+.mr-20{
+  margin-right:20px;
+}
 
 body {
   margin: 0;
+}
+
+.button{
+  text-align: center;
+}
+.button button{
+  margin-bottom: 10px;
+  width: 100%;
+  background: #3CB815;
+  border-radius: 250px;
+  height: 32px;
+  border: none;
+  color: white;
+}
+
+.button button:hover{
+  margin-bottom: 10px;
+  width: 100%;
+  background: #FF7800;
+  border-radius: 25px;
+  height: 32px;
+  border: none;
+  transition: 0.3s ease;
+  cursor: pointer;
 }

@@ -18,7 +18,8 @@ function CartQuantity () {
         <Link to = 'cart'>
         <Badge count={total} size='small'>
             <ShoppingCartOutlined  className='cart__icon'/> 
-        </Badge></Link>
+        </Badge>
+        </Link>
         </>
     )
 }
