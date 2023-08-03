@@ -4,7 +4,7 @@
     flex-direction: column;
 }
 .home-icon{
-    font-size: 22px;
+    font-size: 23px;
     text-decoration: none;
     color: #3CB815;
 }
@@ -12,7 +12,7 @@
     background-color: #fff;
     padding: 0;
     margin: 0;
-    border: #b08989 solid 1px;
+    border-bottom: #d8c9c9 solid 1px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -40,13 +40,13 @@ a{
     list-style-type: none;
 }
 .Layout-default__main{
-    padding: 50px 0;
+    padding: 30px 0;
     background: #F9FBFD;
 }
 
 .Layout-default__footer{
-    padding: 50px 0;
-    background-color: orange;
+    padding: 60px 0;
+    background-color: rgb(226, 242, 178);
 }
 
 .Layout-default__item ul li a{
@@ -62,6 +62,7 @@ a{
 
 .Layout-default__account a{
     margin: 10px;
+    text-decoration: none;
 }
 
 /* css phần main
@@ -69,4 +70,73 @@ a{
 
 .Layout-default__main{
     margin: 30px 0;
+}
+
+.Layout-default__menu a{
+    color: black;
+    font-weight: 500;
+    margin-left: 10px;
+    text-decoration: none;
+}
+.Layout-default__footer li{ 
+    list-style-type: none;
+    padding: 5px 0;
+    font-size: 18px;
+}
+.Layout-default__footer ul{
+    padding: 0;
+    margin: 0;
+}
+.Layout-default__footer a{
+    color: black;
+    display: flex;
+    align-items: center;
+}
+.footer__name{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.footer__text{
+    font-size: 16px;
+    max-width: 85%;
+}
+.fa-user-gear{
+    color: #3CB815;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.fa-facebook{
+    color: #3CB815;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.fa-telegram{
+    color: #3CB815;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.fa-twitter{
+    color: #3CB815;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.fa-location-dot{
+    color: #3CB815;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.fa-phone{
+    color: #3CB815;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.fa-envelope{
+    color: #3CB815;
+    font-size: 20px;
+    margin-right: 5px;
 }

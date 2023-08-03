@@ -72,7 +72,9 @@ function DetailProduct(){
 
     return(<>
     {isLoading ? (
-     <><div className="mt-20 Detail-Product" >
+     <>
+     <div className="mt-20 Detail-Product" >
+        <div className="container">
         <Row>
             <Col xl ={10} lg={10} md={10} sm={24} xs={24}>
                 <div className="DetailProduct__image"> 
@@ -110,12 +112,14 @@ function DetailProduct(){
                 </div>
             </Col>
         </Row>
-        </div>
+        
         <Row>
             <Col span={24}>
                 <RelatedProduct category={category} id={id}></RelatedProduct>
             </Col>
         </Row>
+        </div>
+        </div>
     </>
      ) 
      : (<Spin className="loading"  size="large"/>)

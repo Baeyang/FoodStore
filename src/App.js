@@ -18,7 +18,7 @@ import './App.css';
 import OrderManage from "./pages/OrderManage"
 import DetailOrder from "./pages/OrderManage/DetailOrder"
 import ProductManage from "./pages/ProductManage"
-import ListRelatedProduct from "./pages/DetailProduct/ListRelatedProduct"
+import Product from "./pages/Product"
 function App() {
 
   return (
@@ -30,6 +30,7 @@ function App() {
           <Route path='search' element={<Search />}></Route>
           <Route path='post' element={<Post />}></Route>
           <Route path='cart' element={<Cart />}></Route>
+          <Route path='product' element={<Product />}></Route>
           <Route path='product/:id' element={<DetailProduct />}></Route>
           <Route path='login' element={<Login />}></Route>
           <Route path='register' element={<Register />}></Route>

@@ -4,9 +4,7 @@ function Main(){
     return(
         <>
         <div className="Layout-default__main">
-            <div className="container">
             <Outlet/>
-            </div>
         </div>
         </>
     )

@@ -1,11 +1,11 @@
 .cart{
-    margin: 10px 50px;
+    margin: 50px 50px;
 }
-
-.cart__top{
+.cart__buttons{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 20px 30px 20px 20px;
 }
 .cart__item{
     display: flex;
@@ -15,38 +15,39 @@
     align-items: center;
     background: white;
 }
+
 .cart__price{
     color: #3CB815;
     font-weight: 600;
 }
+
 .cart__total{
     color: #3CB815;
     font-size: 22px;
     font-weight: 500;
+    margin: 10px 0;
 }
-.cart__content{
-    display: flex;
-    align-items: center;
-}
-
-.cart__image {
-    margin-right: 30px;
+.cart__image{
+    width: 120px;
 }
 .cart__image img{
-    width: 200px;
+    width: 100%; 
+    object-fit: cover;
     aspect-ratio: 4/3;
-    height: auto;
 }
 
 .cart__quantity{
     display: flex;
     align-items: center;
-    margin: 0 10px;
 }
 
 .cart__quantity input{
     margin: 0 5px;
     width: 50px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    background: none;
 }
 
 .cart__value {
@@ -55,34 +56,46 @@
     align-items: center;
 }
 
-.cart__pay-box{
-    margin-top: 20px;
-}
-.cart__pay-button{
-    margin-bottom: 10px;
-    background: #3CB815;
-    border-radius: 25px;
-    height: 40px;
-    border: none;
-    color: white;
+.cart__table  th {
+    text-align: start;
+    border-bottom: #ddd 1px solid;
+    
 }
 
-.cart__pay-button:hover{
-    margin-bottom: 10px;
-    background: #FF7800;
-    border-radius: 25px;
-    height: 40px;
-    border: none;
-    transition: 0.3s ease;
+.cart__table  td {
     cursor: pointer;
-    color: white;
+    text-align: start;
+    border-bottom: #ddd 1px solid;
 }
 
-.cart_clear button{
-    border-radius: 25px;
-    cursor: pointer;
+.cart__section{
+    position: relative;
+    background-image: url(../../Layout/LayoutDefault/images/breadcrumb.jpg);
+    height: 160px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
-.cart__pay-box a{
-    color: white;
+@media (max-width:576px) {
+    .cart__section{
+    height:190px;
+    }
+}
+
+@media (min-width:768px) {
+    .cart__section{
+    height: 230px;
+    }
+}
+@media (min-width:992px) {
+    .cart__section{
+    height: 250px;
+    }
+}
+
+@media (min-width:1200px) {
+    .cart__section{
+    height: 300px;
+    }
 }

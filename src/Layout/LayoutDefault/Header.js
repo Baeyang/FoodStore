@@ -1,9 +1,10 @@
-import { HomeFilled,LoginOutlined } from '@ant-design/icons';
-import { Link } from "react-router-dom";
+import { HomeFilled } from '@ant-design/icons';
+import { Link, NavLink } from "react-router-dom";
 import CartQuantity from '../../components/CartQuantity';
-import {Button} from 'antd';
 import { getCookie } from "../../helper/Cookie";
 import { useSelector } from "react-redux";
+import { faUserGear } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Header(){
     const token = getCookie('token')
     const isLogin = useSelector(state => state.loginReducer)
@@ -13,18 +14,20 @@ function Header(){
                     <div className="container">
                         <div className="Layout-default__wrap">
                             <div className="Layout-default__logo">
-                                <Link to = '/'> 
+                                <Link to = '/' > 
                                 <HomeFilled className='home-icon'/>
                                 </Link>
+                            </div>
+                            <div className='Layout-default__menu'>
+                                <NavLink to ='/product' >Sản phẩm</NavLink>
+                                <NavLink to ='/post'>Bài đăng</NavLink>
                             </div>
                             
                             <div className="Layout-default__account">
                                 <CartQuantity/>
    
                                 <Link to = 'login'> 
-                                    <Button icon={<LoginOutlined />}>
-                                    For Admin
-                                    </Button>
+                                    <FontAwesomeIcon icon={faUserGear} />
                                 </Link>
 
                             </div>

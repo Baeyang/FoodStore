@@ -9,6 +9,8 @@
 // import { Select, Space } from 'antd';
 // // //lưu vào storage và lấy ra url 
 // import { Rate } from 'antd';
+
+// import { Button } from "reactstrap";
 // import { useState } from 'react';
 function Post() {
   
@@ -18,7 +20,7 @@ function Post() {
   // }
   return(
     <>
-      {/* <Rate onChange={onChange} />; */}
+
     </>
   );
   }

@@ -1,0 +1,175 @@
+.Home__Section {
+    background: url(../../Layout/LayoutDefault/images/background.jpg);
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.Section__sub-title {
+    color: white;
+    margin: 0;
+}
+
+.Section__title {
+    color: white;
+}
+
+.Section__text {
+    color: white;
+}
+
+
+.Home__Section-2 {
+    padding: 50px 0;
+}
+
+.Home__Section-2 .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Section-2__item {
+    background-color: rgb(226, 242, 178);
+    padding: 20px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.Section-2__item:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.Section-2__item h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.Section-2__item p {
+    margin: 0;
+    padding: 0;
+}
+
+.fa-truck-fast {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.fa-bowl-food {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.fa-person {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.fa-chart-line {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.Home__Product-item {
+    padding: 30px 0;
+}
+
+.Product-item__title {
+    color: #0a1d37;
+    font-size: 32px;
+    text-align: center;
+}
+
+
+
+
+@media (max-width:1200px) {
+    .Home__Section {
+        height: 750px;
+    }
+
+    .Product-item__title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width:992px) {
+    .Home__Section {
+        height: 600px;
+    }
+
+    .Product-item__title {
+        font-size: 26px;
+    }
+}
+
+@media (max-width:768px) {
+    .Home__Section {
+        height: 500px;
+    }
+
+    .Product-item__title {
+        font-size: 23px;
+    }
+}
+
+@media (max-width:576px) {
+    .Home__Section {
+        height: 400px;
+    }
+
+    .Product-item__title {
+        font-size: 20px;
+    }
+
+}
+
+@media (min-width: 576px) {
+    .Section__title {
+        font-size: 30px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .Section__title {
+        font-size: 40px;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .Section__title {
+        font-size: 50px;
+    }
+
+    .Section__sub-title {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .Section__text {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .Section__title {
+        font-size: 55px;
+    }
+
+    .Section__sub-title {
+        font-size: 24px;
+    }
+
+    .Section__text {
+        font-size: 17px;
+    }
+}

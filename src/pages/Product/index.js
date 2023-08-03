@@ -1,7 +1,24 @@
-function Product(){
-    return(
+import {Row,Col} from 'antd'
+import ProductList from "../../components/ProductList"
+import SearchForm from "../../components/SearchForm"
+function Product() {
+    return (
         <>
-            Page sản phẩm
+            <div className='container'>
+                <Row>
+                    <Col span={4} xl={4} lg={4} md={6} sm={24} xs={24}>
+                        <div className="Search-Form__layout">
+                            <SearchForm />
+                        </div>
+                    </Col>
+
+                    <Col span={20} xl={20} lg={20} md={18} sm={24} xs={24}>
+                        <div className="Product-List__layout">
+                            <ProductList />
+                        </div>
+                    </Col>
+                </Row>
+            </div>
         </>
     )
 }
