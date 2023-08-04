@@ -19,6 +19,11 @@ function OrderList(){
     },[])
     console.log(order)
 
+    let options = [
+      {text:'Đang chờ', value:'Đang chờ'},
+      {text:'Đang giao hàng', value:'Đang giao hàng'},
+      {text:'Hoàn thành', value:'Hoàn thành'}               
+    ]
     const columns = [
         {
           title :'Mã Đơn',
@@ -49,6 +54,9 @@ function OrderList(){
           title: 'Trạng thái bán',
           dataIndex: 'status',
           key: 'status',
+          filters : options,
+          onFilter: (value, record) => record.status.indexOf(value) === 0,
+          sortDirections: ['descend'],
           render: (_, record) => (
               <>
                 {record.status === 'Đang chờ' ? (

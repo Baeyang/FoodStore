@@ -9,6 +9,9 @@
     height: 70px;
     z-index: 100000;
 }
+.Layout-Admin__header a{
+    color: #3CB815;
+}
 .Layout-Admin__wrap{
     display: flex;
     align-items: center;

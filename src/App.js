@@ -19,10 +19,12 @@ import OrderManage from "./pages/OrderManage"
 import DetailOrder from "./pages/OrderManage/DetailOrder"
 import ProductManage from "./pages/ProductManage"
 import Product from "./pages/Product"
+import ScrollTop from "./components/ScrollTop"
 function App() {
 
   return (
     <>
+      <ScrollTop></ScrollTop>
       <Routes>
         <Route path='/' element={<LayoutDefault />}>
           <Route index={true} element={<Home />}></Route>

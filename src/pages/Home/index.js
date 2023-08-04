@@ -2,9 +2,7 @@
 import {Row,Col} from 'antd'
 import { faTruckFast,faBowlFood,faPerson,faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ProductList from "../../components/ProductList"
-import SearchForm from "../../components/SearchForm"
-import sectionImg from '../../Layout/LayoutDefault/images/section.png'
+
 import './home.css'
 import HomeListProduct from '../../components/HomeListProduct';
 function Home(){

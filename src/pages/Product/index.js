@@ -4,6 +4,7 @@ import SearchForm from "../../components/SearchForm"
 function Product() {
     return (
         <>
+        <div className='Product-page__layout'>
             <div className='container'>
                 <Row>
                     <Col span={4} xl={4} lg={4} md={6} sm={24} xs={24}>
@@ -19,6 +20,7 @@ function Product() {
                     </Col>
                 </Row>
             </div>
+        </div>
         </>
     )
 }

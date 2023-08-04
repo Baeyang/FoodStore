@@ -3,9 +3,9 @@ import './OrderManage.css'
 function OrderManage(){
     return(
         <>
-            <h1>
+            <h3>
                 Danh sách các đơn hàng
-            </h1>
+            </h3>
             <OrderList></OrderList>
         </>
     )

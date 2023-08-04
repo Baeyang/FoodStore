@@ -3,11 +3,17 @@ import { Link, NavLink } from "react-router-dom";
 import CartQuantity from '../../components/CartQuantity';
 import { getCookie } from "../../helper/Cookie";
 import { useSelector } from "react-redux";
-import { faUserGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserGear } from '@fortawesome/free-solid-svg-icons';
+
 function Header(){
     const token = getCookie('token')
     const isLogin = useSelector(state => state.loginReducer)
+    const navLinkstyle = ({isActive}) => {
+        return{
+            color :  isActive ? '#3CB815' : 'black'
+        }
+    }
 
     return(
         <div className="Layout-default__header">
@@ -19,8 +25,8 @@ function Header(){
                                 </Link>
                             </div>
                             <div className='Layout-default__menu'>
-                                <NavLink to ='/product' >Sản phẩm</NavLink>
-                                <NavLink to ='/post'>Bài đăng</NavLink>
+                                <NavLink to ='/product' style={navLinkstyle}>Sản phẩm</NavLink>
+                                <NavLink to ='/post' style={navLinkstyle}>Bài đăng</NavLink>
                             </div>
                             
                             <div className="Layout-default__account">

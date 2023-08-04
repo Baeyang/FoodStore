@@ -1,4 +1,3 @@
-import { Container } from "@mui/material"
 import { rules } from "../../rules"
 import { Col, Form, Row, Card, Input, Button, notification } from 'antd'
 import { getCookie } from "../../helper/Cookie";
@@ -65,7 +64,8 @@ function Checkout() {
     return (
         <>
             {contextHolder}
-            <Container sx={{ paddingLeft: 3, paddingRight: 3 }} >
+        <div className="Checkout-page">
+            <div className="container">
                 <Row>
                     <Col xl={12} lg={12} md={12} sm={24} xs={24}>
                         <Card title="Thông tin chi tiết" id="infoForm">
@@ -158,8 +158,8 @@ function Checkout() {
                     </Col>
                 </Row>
 
-
-            </Container>
+             </div>    
+            </div>                            
         </>
     )
 }

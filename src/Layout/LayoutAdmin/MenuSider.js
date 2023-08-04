@@ -1,8 +1,6 @@
 import { Menu } from "antd";
 import {
   DashboardOutlined,
-  UserOutlined,
-  UnorderedListOutlined,
   FileDoneOutlined,
 } from "@ant-design/icons";
 import { Link, useLocation } from "react-router-dom";

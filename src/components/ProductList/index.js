@@ -29,7 +29,7 @@ function ProductList(){
     //Lọc theo tên input vào
     const name = useSelector(state => state.nameReducer)
     const filterName = onProduct.filter((item)=>{
-        return item.title.toLowerCase().includes(name)
+        return item.title.toLowerCase().includes(name.toLowerCase())
     })
 
     //Lọc theo loại category

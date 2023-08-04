@@ -73,7 +73,7 @@ function DetailProduct(){
     return(<>
     {isLoading ? (
      <>
-     <div className="mt-20 Detail-Product" >
+     <div className="Detail-Product" >
         <div className="container">
         <Row>
             <Col xl ={10} lg={10} md={10} sm={24} xs={24}>

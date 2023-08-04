@@ -4,9 +4,9 @@ import { Row,Col } from "antd"
 function Dashboard() {
     return(
         <>
-         <h1>
+         <h3>
          TRANG DASHBOARD
-         </h1>
+         </h3>
          <Row>
             <Col xl={11} lg={11} md={11} xs={24} sm={24} className="mt-20">
                 <OrderStatistic></OrderStatistic>
