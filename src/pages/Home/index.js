@@ -2,7 +2,7 @@
 import {Row,Col} from 'antd'
 import { faTruckFast,faBowlFood,faPerson,faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { Link } from 'react-router-dom';
 import './home.css'
 import HomeListProduct from '../../components/HomeListProduct';
 function Home(){
@@ -28,6 +28,13 @@ function Home(){
                     <p className='Section__text'>
                         Các món ăn được tạo nên từ thực phẩm sạch, qua kiểm duyệt, dưới tay các đầu bếp dân gian hàng đầu của chúng tôi sẽ mang đến cho bạn trải nghiệm bữa ăn một cách trọn vẹn nhất
                     </p>
+                    <div className="button-link">
+                            <Link to='/product'>
+                            <button className="button">
+                                Mua Ngay
+                            </button>
+                            </Link>
+                        </div>
                     </Col>
                     </Row>
                 </div>

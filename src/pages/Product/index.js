@@ -1,9 +1,11 @@
 import {Row,Col} from 'antd'
 import ProductList from "../../components/ProductList"
 import SearchForm from "../../components/SearchForm"
+import Section from '../../components/Section'
 function Product() {
     return (
         <>
+        <Section title={'Tất cả sản phẩm'}></Section>
         <div className='Product-page__layout'>
             <div className='container'>
                 <Row>

@@ -1,5 +1,5 @@
 .cart{
-    margin: 50px 50px;
+    margin: 40px 0px;
 }
 .cart__buttons{
     display: flex;
@@ -68,34 +68,3 @@
     border-bottom: #ddd 1px solid;
 }
 
-.cart__section{
-    position: relative;
-    background-image: url(../../Layout/LayoutDefault/images/breadcrumb.jpg);
-    height: 160px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-}
-
-@media (max-width:576px) {
-    .cart__section{
-    height:190px;
-    }
-}
-
-@media (min-width:768px) {
-    .cart__section{
-    height: 230px;
-    }
-}
-@media (min-width:992px) {
-    .cart__section{
-    height: 250px;
-    }
-}
-
-@media (min-width:1200px) {
-    .cart__section{
-    height: 300px;
-    }
-}

@@ -55,7 +55,13 @@ a{
   margin-left: auto;
 }
 
+li{
+  list-style-type: none;
+}
 
+a{
+  text-decoration: none;
+}
 @media (max-width: 576px) {
   .container {
     max-width: 570px;
@@ -155,14 +161,14 @@ body {
   border-radius: 250px;
   border: none;
   color: white;
-  padding: 10px;
+  padding: 10px 25px;
 }
 
 .button-link button:hover{
   margin-bottom: 10px;
   background: #FF7800;
   border-radius: 25px;
-  padding: 10px;
+  padding: 10px 25px;
   border: none;
   transition: 0.3s ease;
   cursor: pointer;

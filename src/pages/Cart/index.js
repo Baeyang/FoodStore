@@ -5,6 +5,7 @@ import { deleteCart } from "../../actions/cart"
 import { getCookie } from "../../helper/Cookie"
 import { Button } from "antd"
 import { Link } from "react-router-dom"
+import Section from "../../components/Section"
 
 function Cart() {
 
@@ -25,8 +26,7 @@ function Cart() {
     console.log(cart)
     return (
         <>
-            <div className="cart__section"> 
-            </div>
+            <Section title={'Giỏ hàng'}></Section>
             <div className="cart">
                 <div className="container">
                     {cart.length > 0 ? (
@@ -36,7 +36,7 @@ function Cart() {
                                 <div className="button-link">
                                     <Link to='/checkout'>
                                     <button className="button">
-                                        THANH TOÁN NGAY
+                                        Thanh toán
                                     </button>
                                     </Link>
                                 </div>

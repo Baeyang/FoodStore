@@ -1,4 +1,4 @@
-import { Button,Modal,Form,Col,Row,Input,message, InputNumber } from "antd"
+import { Button,Modal,Form,Col,Row,Input,message, InputNumber,notification } from "antd"
 import { useState } from "react";
 import {db,push,set,ref} from '../../firebase'
 import { rules } from "../../rules";
@@ -9,8 +9,8 @@ function AddProduct(props){
     const {onReload} = props
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [form] = Form.useForm()
-    const [mess, contextHolder] = message.useMessage();
     const [imageUpload, setImageUpload] = useState(null);
+    const [noti, contextHolder] = notification.useNotification();
 
     const showModal = () => {
       setIsModalOpen(true);
@@ -44,10 +44,13 @@ function AddProduct(props){
                 .then(()=>{
                     form.resetFields();
                     setImageUpload(null)
-                    mess.open({
-                        type: "success",
-                        content: "Tạo mới thành công!",
-                        duration: 5,
+                    noti.success({
+                        duration: 2,
+                        message: `Thêm mới thành công!`,
+                        // description: "Cảm ơn bạn đã đặt hàng!",
+                        style: {
+                            marginTop: '8vh',
+                          }
                     });
                     setIsModalOpen(false)
                     onReload()
@@ -55,11 +58,14 @@ function AddProduct(props){
                 .catch((error) => {
                     console.error(error);
                     form.resetFields();
-                    mess.open({
-                        type: "error",
-                        content: "Tạo mới không thành công!",
-                        duration: 3,
-                      });
+                    noti.error({
+                        duration: 2,
+                        message: `Thêm mới thất bại!`,
+                        // description: "Cảm ơn bạn đã đặt hàng!",
+                        style: {
+                            marginTop: '8vh',
+                          }
+                    })
                     })
                     setIsModalOpen(false)
                     onReload()

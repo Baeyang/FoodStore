@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { addtoCart, updateCart } from "../../actions/cart";
 import { Row,Col,Rate,Spin,Collapse } from "antd";
 import RelatedProduct from "./RelatedProduct"
+import Section from "../../components/Section"
 
 
 function DetailProduct(){
@@ -73,6 +74,7 @@ function DetailProduct(){
     return(<>
     {isLoading ? (
      <>
+     <Section title={'Chi tiết sản phẩm'}></Section>
      <div className="Detail-Product" >
         <div className="container">
         <Row>
@@ -112,7 +114,7 @@ function DetailProduct(){
                 </div>
             </Col>
         </Row>
-        
+        <div className="Related__Product"></div>
         <Row>
             <Col span={24}>
                 <RelatedProduct category={category} id={id}></RelatedProduct>

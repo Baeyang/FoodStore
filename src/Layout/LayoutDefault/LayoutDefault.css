@@ -1,3 +1,4 @@
+/* header CSS */
 .Layout-default__main{
     min-height: 100vh;
     display: flex;
@@ -5,6 +6,28 @@
 }
 .home-icon{
     font-size: 23px;
+    text-decoration: none;
+    color: #3CB815;
+}
+
+.drawer-title{
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.drawer-title a{
+    color: #3CB815;
+}
+.ant-drawer-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-bars{
+    font-size: 22px;
     text-decoration: none;
     color: #3CB815;
 }
@@ -23,7 +46,7 @@ a{
 }
 
 .Layout-default__wrap{
-    padding: 10px 0;
+    padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,7 +57,8 @@ a{
     width: auto;
 
 }
-.Layout-default__item ul    {
+
+.Layout-default__item ul  {
     display: flex;
     text-decoration: none;
     list-style-type: none;
@@ -61,15 +85,8 @@ a{
 }
 
 .Layout-default__account a{
-    margin: 10px;
+    margin-left: 10px;
     text-decoration: none;
-}
-
-/* css phần main
-*/ 
-
-.Layout-default__main{
-    margin: 30px 0 0 0;
 }
 
 .Layout-default__menu a{
@@ -78,6 +95,46 @@ a{
     margin:0 20px;
     text-decoration: none
 }
+.Layout-default__bar{
+    display: none;
+}
+.Layout-default__menu-mobile ul {
+    padding: 0;
+    margin: 0;
+}
+.Layout-default__menu-mobile ul li{
+    font-size:16px;
+    margin: 20px 0;
+    font-weight: 600;
+    /* padding: 0;
+    margin: 0; */
+
+} 
+.Layout-default__bar ul{
+    display: none;
+    padding: 0;
+    /* position: fixed;
+    background-color: rgb(226, 242, 178);
+    height: 100vh;
+    top: 0;
+    left: 0px;
+    width: 250px; */
+}
+.Layout-default__bar li{
+    list-style-type: none;
+}
+/*  end header css */ 
+
+
+/*  main css */ 
+.Layout-default__main{
+    margin: 30px 0 0 0;
+}
+/* end main CSS */
+
+
+
+/* footer CSS */
 .Layout-default__footer li{ 
     list-style-type: none;
     padding: 5px 0;
@@ -144,3 +201,23 @@ a{
     font-size: 20px;
     margin-right: 5px;
 }
+
+
+
+@media (max-width:576px){
+    .Layout-default__bar{
+        display: block;
+    }
+    .Layout-default__menu{
+        display: none;
+    }
+    .Layout-default__account a{
+        margin-left: 0;
+    }
+    .Layout-default__login{
+        display: none;
+    }
+
+
+}
+

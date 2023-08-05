@@ -15,7 +15,7 @@
 .DetailProduct__price{
     color: red;
     font-weight: 500;
-    font-size:16px;
+    font-size:20px;
     margin-bottom: 10px;
 }
 
@@ -37,6 +37,9 @@
 }
 .DetailProduct__info .button button{
     height: 40px;
+}
+.Related__Product{
+    margin-top: 50px;
 }
 
 .RelatedProduct__image img{
@@ -102,6 +105,9 @@ position: relative;
     opacity: 1;
     transition: opacity 0.3s ease;
 }
+.ant-rate{
+    font-size: 16px;
+}
 
 
 @media (max-width: 768px){
@@ -117,7 +123,7 @@ position: relative;
     .DetailProduct__price{
         color: red;
         font-weight: 500;
-        font-size:14px;
+        font-size:18px;
         margin-bottom: 10px;
     }
     
@@ -131,6 +137,7 @@ position: relative;
         margin-bottom: 10px;
         font-size: 14px;
     }
+    
 }
 @media (max-width: 576px){
     .button-next-product {

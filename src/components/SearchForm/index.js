@@ -58,7 +58,7 @@ function SearchForm(){
             <Col xl={24} lg={24} md={24} sm={12} xs={24}>
                 <Form onFinish={handleFinish}>
                         <Form.Item name = "category" >
-                        <Select  options={options} placeholder='Chọn loại sản phẩm' className="Search-Form__Select"></Select>
+                            <Select options={options} placeholder='Chọn loại sản phẩm' className="Search-Form__Select"></Select>
                         </Form.Item>
                         <Form.Item className="button">
                             <Button type='primary' htmlType="submit">

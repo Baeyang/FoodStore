@@ -42,7 +42,7 @@ function RelatedProduct(props){
     // }
     return(
     <>
-       <h2>Sản phẩm cùng loại</h2>
+       <h3>Sản phẩm cùng loại</h3>
        {relatedProduct && (
         <>
             <div className="RelatedProduct__list">
@@ -57,15 +57,15 @@ function RelatedProduct(props){
                       },
 
                     640: {
-                      slidesPerView: 2,
+                      slidesPerView: 3,
                       spaceBetween: 20,
                     },
                     768: {
-                      slidesPerView: 3,
+                      slidesPerView: 4,
                       spaceBetween: 40,
                     },
                     1024: {
-                      slidesPerView: 3,
+                      slidesPerView: 4,
                       spaceBetween: 50,
                     },
                   }}
