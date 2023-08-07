@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { ref, onValue, set , update ,get ,equalTo , orderByChild ,query,push ,remove} from 'firebase/database';
+import { ref, onValue, set , update ,get ,equalTo ,child, orderByChild ,query,push ,remove} from 'firebase/database';
 import { initializeApp } from "firebase/app";
 import {getDatabase} from "firebase/database";
 import { getAuth } from "firebase/auth";
@@ -22,4 +22,4 @@ const db = getDatabase(app);
 const auth = getAuth();
 const storage = getStorage(app);
 
-export { db, storage,ref, onValue, auth ,remove, set, update,uploadBytes, getDownloadURL, get , equalTo , orderByChild ,query ,push};
+export { db, storage,ref, onValue, auth,child ,remove, set, update,uploadBytes, getDownloadURL, get , equalTo , orderByChild ,query ,push};
