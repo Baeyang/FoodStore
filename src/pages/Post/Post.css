@@ -1,0 +1,117 @@
+.Post__about{
+    padding: 50px 0;
+}
+
+.Post__about img{
+    max-width: 100%;
+    height: auto;
+}
+
+.About__image{
+    display: flex;
+}
+
+.About__image-1{
+    margin-right: 22px;
+    margin-top: 66px;
+}
+
+.About__sub-title{
+    color: #3CB815;
+}
+    
+.About__title{
+    font-weight: 700;
+}
+
+.About__name-duty{
+    opacity: 0.8;
+}
+
+.Post__members{
+    background: rgb(226, 242, 178);
+    padding: 60px 0px;
+}
+.Members__item{
+    text-align: center;
+}
+.Members__item img{
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+.Members__sub-title{
+    text-align: center;
+    margin-bottom: 40px;
+}
+.Members__name{
+    text-align: center;
+}
+.Members__duty{
+    text-align: center;
+    margin-bottom: 10px;
+    display: block;
+}
+.Members__contact ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.Members__contact li{
+    padding: 0 10px;
+    text-align: center;
+}
+
+.fa-facebook{
+    color: #3CB815;
+    font-size: 26px;
+}
+.fa-telegram{
+    color: #3CB815;
+    font-size: 26px;
+}
+.fa-twitter{
+    color: #3CB815;
+    font-size: 26px;
+}
+
+
+.About__logo{
+    margin: 70px 0;
+}
+.About__logo--inner{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.About__logo--items img{
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 992px){
+    .About__text{
+        margin-top: 30px;
+    }
+    .About__title{
+        font-size: 26px;
+    }
+    .About__image-1{
+        margin-top: 0;
+    }
+    .Members__box{
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 768px){
+    .About__title{
+        font-size: 24px;
+    }
+    .About__sub-title{
+        text-align: center;
+    }
+    .About__words{
+        text-align: center;
+    }
+}

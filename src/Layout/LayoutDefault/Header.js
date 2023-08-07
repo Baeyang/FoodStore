@@ -51,7 +51,7 @@ function Header(){
                             </div>
                             <div className='Layout-default__menu'>
                                 <NavLink to ='/product' style={navLinkstyle}>Sản phẩm</NavLink>
-                                <NavLink to ='/post' style={navLinkstyle}>Bài đăng</NavLink>
+                                <NavLink to ='/post' style={navLinkstyle}>Giới thiệu</NavLink>
                             </div>                           
                             <div className="Layout-default__account">
                                 <div className='Layout-default__cart'>

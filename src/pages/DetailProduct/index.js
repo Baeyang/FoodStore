@@ -76,7 +76,7 @@ function DetailProduct(){
             await push(ratingRef, e);
             noti.success({
                 duration: 1,
-                message: `Thêm mới thành công!`,
+                message: `Gửi đánh giá thành công!`,
                 style: {
                     marginTop: '8vh',
                   }
