@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import {ref,db,get,update} from '../../firebase'
 import { useState,useEffect } from "react"
 import { Card,Col,Row,Select,Form,Button,message,Spin } from "antd"
+import axios from 'axios';
 import GoBack from "../../components/Goback"
 import './OrderManage.css'
 
@@ -13,6 +14,12 @@ function DetailOrder(){
     const [detailOrder, setDetailOrder] = useState([])
     const [isLoading, setLoading] = useState(false)
     const [messageApi, contextHolder] = message.useMessage();
+        //twilio account
+    const url = 'https://api.twilio.com/2010-04-01/Accounts/AC37c663c8e7b621251c006fe1e86dec42/Messages.json'
+    const auth = {
+        username: 'AC37c663c8e7b621251c006fe1e86dec42',
+        password: '8adefb5d1a2f4328c0c72dc2397038d4'
+    };
     useEffect(()=>{
         const fetchApi = async() => {
             get(ref(db,`order/${param.id}`))
@@ -28,6 +35,17 @@ function DetailOrder(){
     const foods = detailOrder.ordered ? detailOrder.ordered : []
 
     const onFinish = async (value) => {
+        const data = new URLSearchParams()
+        data.append('To', detailOrder.phone)
+        data.append('From', '+14705704514')
+        data.append('Body', `Đơn hàng của bạn: ${detailOrder.id} - ${value.status}`)
+        try{
+            const response = await axios.post(url,data,{auth})
+            console.log(response.data)
+        }
+        catch(error){
+            console.error(error)
+        }
         const res = await update(ref(db,`order/${param.id}`),{
             status : value.status
         })
