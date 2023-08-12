@@ -19,7 +19,7 @@ function CartList(){
             </thead>
             <tbody>
             {cart.map((item,index)=>(
-                <CartItem  item={item} key={index}/>
+                <CartItem  item={item} key={item.id}/>
             ))}
             </tbody>
         </table>
