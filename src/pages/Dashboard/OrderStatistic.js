@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react"
 import {ref,db,get} from '../../firebase'
-import { Card ,Spin} from "antd"
+import { Card ,Spin, Badge} from "antd"
 function OrderStatistic(){
     const [orderData,setOrderData] = useState([])
     const [isLoading,setLoading] = useState(false)
@@ -45,18 +45,18 @@ function OrderStatistic(){
         <>
         {isLoading ? (
             <>
-                <Card title='Thống kê đơn hàng' size='small'>
-                    <div>
+                <Card title='Thống kê đơn hàng' size='small' hoverable headStyle={{ backgroundColor: '#3CB815', color: 'white' ,  fontSize: 19}}>
+                    <h6>
                         Tổng số đơn hàng : {orderData.total}
+                    </h6>
+                    <div>
+                    <Badge color="yellow" text={`Đang chờ : ${orderData.waiting}`} /> 
                     </div>
                     <div>
-                        Đang chờ : {orderData.waiting}
+                    <Badge color="blue" text={`Đang giao hàng : ${orderData.shipping}`} />   
                     </div>
                     <div>
-                        Đang giao hàng : {orderData.shipping}
-                    </div>
-                    <div>
-                        Hoàn thành : {orderData.done}
+                    <Badge color="green" text={`Hoàn thành : ${orderData.done}`} />      
                     </div>
                 </Card>
             </>

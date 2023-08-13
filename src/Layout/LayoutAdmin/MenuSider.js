@@ -3,6 +3,8 @@ import {
   DashboardOutlined,
   FileDoneOutlined,
 } from "@ant-design/icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link, useLocation } from "react-router-dom";
 
 function MenuSider() {
@@ -15,7 +17,7 @@ function MenuSider() {
     },
     {
       key: "/order-manage",
-      icon: <FileDoneOutlined />,
+      icon: <FontAwesomeIcon icon={faCartShopping} />,
       label: <Link to="/order-manage">Quản lý Đơn hàng</Link>,
     },
     {

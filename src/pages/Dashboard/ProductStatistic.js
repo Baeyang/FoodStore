@@ -1,4 +1,4 @@
-import { Card,Spin } from "antd"
+import { Card,Spin,Badge } from "antd"
 import { useState,useEffect } from "react"
 import {ref,db,get} from '../../firebase'
 function ProductStatistic(){
@@ -38,10 +38,10 @@ function ProductStatistic(){
     return(
     <>
     {isLoading ?(
-        <Card title='Thống kê sản phẩm' size='small'>
-            <div>Tổng số sản phẩm : {productData.total}</div>
-            <div>Đang bật : {productData.statusOn}</div>
-            <div>Đang tắt : {productData.statusOff}</div>
+        <Card title='Thống kê sản phẩm' size='small' hoverable  headStyle={{ backgroundColor: '#3CB815', color: 'white', fontSize: 19}}>
+            <h6>Tổng số sản phẩm : {productData.total}</h6>
+            <div><Badge color="green" text={`Đang bật : ${productData.statusOn}`} /></div>
+            <div><Badge color="red" text={`Đang tắt : ${productData.statusOff}`} /></div>
         </Card>) : (
             <>
                 <Spin className="loading"  size="large"/>
